@@ -54,6 +54,8 @@ volume_db = -10.0
 
 [node name="PowerupTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="CactusContainer" type="Node" parent="."]
 [connection signal="hurt" from="Player" to="." method="_on_Player_hurt"]
 [connection signal="pickup" from="Player" to="." method="_on_Player_pickup"]
 [connection signal="timeout" from="GameTimer" to="." method="_on_GameTimer_timeout"]

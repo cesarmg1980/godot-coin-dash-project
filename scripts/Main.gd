@@ -55,7 +55,7 @@ func spawn_coins():
 
 func spawn_cactus():
 	var c = Cactus.instance()
-	add_child(c)
+	$CactusContainer.add_child(c)
 	c.position = Vector2(rand_range(0, screensize.x),
 						rand_range(0, screensize.y))
 
@@ -72,6 +72,8 @@ func game_over():
 	$GameTimer.stop()
 	for coin in $CoinContainer.get_children():
 		coin.queue_free()
+	for cactus in $CactusContainer.get_children():
+		cactus.queue_free()
 	$HUD.show_game_over()
 	$Player.die()
 	$EndSound.play()
